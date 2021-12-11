@@ -3,7 +3,10 @@ import pandas as pd
 from datetime import datetime
 from PIL import Image
 
-st.title('占いアプリ')
+# st.title('占いアプリ')
+img_title = Image.open(f'images/title.png')
+st.image(img_title, use_column_width=True)
+
 st.write('AIであなたと気になるひとを占ってみよう')
 
 st.subheader('あなたを占います')
