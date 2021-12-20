@@ -1200,3 +1200,5 @@ def p_uranai_start():
 
 if st.button('お相手との相性を占う'):
 	p_uranai_start()
+
+st.write('Copyright © 2021 Tomoyuki Yoshikawa. All Rights Reserved.')
