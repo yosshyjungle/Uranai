@@ -6,7 +6,6 @@ from PIL import Image
 # st.title('占いアプリ')
 img_title = Image.open(f'images/title.png')
 st.image(img_title, use_column_width=True)
-
 st.write('AIであなたと気になるひとを占ってみよう')
 
 st.subheader('あなたを占います')
@@ -16,7 +15,11 @@ months = st.text_input('あなたの生まれた月を入力してください�
 days = st.text_input('あなたの生まれた日を入力してください。（2日→2）', 2)
 sex = st.radio('あなたの性別は？', ['男', '女', 'どちらでもない'])
 
+
+# global results
+
 def uranai_start():
+	global results
 	global years
 	years = int(years)
 	global months
@@ -44,27 +47,27 @@ def uranai_start():
 	# 壮年期（命数３を採用）
 	if age > 60:
 		if meisu[0:2] < '11':
-			print(f'あなたは{even_odd}の羅針盤型です。')
+			print(f'あなたは{even_odd}の羅針盤タイプです。')
 			yourType = f'{even_odd}の羅針盤{meisu[0:2]}'
 
 		elif meisu[0:2] < '21':
-			print(f'あなたは{even_odd}のインディアン型です')
+			print(f'あなたは{even_odd}のインディアンタイプです')
 			yourType = f'{even_odd}のインディアン{meisu[0:2]}'
 
 		elif meisu[0:2] < '31':
-			print(f'あなたは{even_odd}の鳳凰型です')
+			print(f'あなたは{even_odd}の鳳凰タイプです')
 			yourType = f'{even_odd}の鳳凰{meisu[0:2]}'
 
 		elif meisu[0:2] < '41':
-			print(f'あなたは{even_odd}の時計型です')
+			print(f'あなたは{even_odd}の時計タイプです')
 			yourType = f'{even_odd}の時計{meisu[0:2]}'
 
 		elif meisu[0:2] < '51':
-			print(f'あなたは{even_odd}のカメレオン型です')
+			print(f'あなたは{even_odd}のカメレオンタイプです')
 			yourType = f'{even_odd}のカメレオン{meisu[0:2]}'
 
 		elif meisu[0:2] < '61':
-			print(f'あなたは{even_odd}のイルカ型です')
+			print(f'あなたは{even_odd}のイルカタイプです')
 			yourType = f'{even_odd}のイルカ{meisu[0:2]}'
 		else:
 			print('その他')
@@ -73,27 +76,27 @@ def uranai_start():
 	# 青年期（命数２を採用）
 	elif age > 30:
 		if meisu[2:4] < '11':
-			print(f'あなたは{even_odd}の羅針盤型です。')
+			print(f'あなたは{even_odd}の羅針盤タイプです。')
 			yourType = f'{even_odd}の羅針盤{meisu[2:4]}'
 
 		elif meisu[2:4] < '21':
-			print(f'あなたは{even_odd}のインディアン型です')
+			print(f'あなたは{even_odd}のインディアンタイプです')
 			yourType = f'{even_odd}のインディアン{meisu[2:4]}'
 
 		elif meisu[2:4] < '31':
-			print(f'あなたは{even_odd}の鳳凰型です')
+			print(f'あなたは{even_odd}の鳳凰タイプです')
 			yourType = f'{even_odd}の鳳凰{meisu[2:4]}'
 
 		elif meisu[2:4] < '41':
-			print(f'あなたは{even_odd}の時計型です')
+			print(f'あなたは{even_odd}の時計タイプです')
 			yourType = f'{even_odd}の時計{meisu[2:4]}'
 
 		elif meisu[2:4] < '51':
-			print(f'あなたは{even_odd}のカメレオン型です')
+			print(f'あなたは{even_odd}のカメレオンタイプです')
 			yourType = f'{even_odd}のカメレオン{meisu[2:4]}'
 
 		elif meisu[2:4] < '61':
-			print(f'あなたは{even_odd}のイルカ型です')
+			print(f'あなたは{even_odd}のイルカタイプです')
 			yourType = f'{even_odd}のイルカ{meisu[2:4]}'
 		else:
 			print('その他')
@@ -101,27 +104,27 @@ def uranai_start():
 	# 幼年期（命数１を採用）
 	elif age > 0:
 		if meisu[4:6] < '11':
-			print(f'あなたは{even_odd}の羅針盤型です。')
+			print(f'あなたは{even_odd}の羅針盤タイプです。')
 			yourType = f'{even_odd}の羅針盤{meisu[4:6]}'
 
 		elif meisu[4:6] < '21':
-			print(f'あなたは{even_odd}のインディアン型です')
+			print(f'あなたは{even_odd}のインディアンタイプです')
 			yourType = f'{even_odd}のインディアン{meisu[4:6]}'
 
 		elif meisu[4:6] < '31':
-			print(f'あなたは{even_odd}の鳳凰型です')
+			print(f'あなたは{even_odd}の鳳凰タイプです')
 			yourType = f'{even_odd}の鳳凰{meisu[4:6]}'
 
 		elif meisu[4:6] < '41':
-			print(f'あなたは{even_odd}の時計型です')
+			print(f'あなたは{even_odd}の時計タイプです')
 			yourType = f'{even_odd}の時計{meisu[4:6]}'
 
 		elif meisu[4:6] < '51':
-			print(f'あなたは{even_odd}のカメレオン型です')
+			print(f'あなたは{even_odd}のカメレオンタイプです')
 			yourType = f'{even_odd}のカメレオン{meisu[4:6]}'
 
 		elif meisu[4:6] < '61':
-			print(f'あなたは{even_odd}のイルカ型です')
+			print(f'あなたは{even_odd}のイルカタイプです')
 			yourType = f'{even_odd}のイルカ{meisu[4:6]}'
 		else:
 			print('その他')
@@ -514,10 +517,52 @@ def uranai_start():
 	else:
 		pass
 
+	# 2022年の運勢
+	st.subheader('2022年のあなたの運勢は')
+	if yourType[0:-2] == '金の羅針盤':
+		with open(f'2022/{yourType[0:-2]}.txt', 'r', encoding='utf-8') as f:
+			st.write(f.read())
+	elif yourType[0:-2] == '銀の羅針盤':
+		with open(f'2022/{yourType[0:-2]}.txt', 'r', encoding='utf-8') as f:
+			st.write(f.read())
+	elif yourType[0:-2] == '金のインディアン':
+		with open(f'2022/{yourType[0:-2]}.txt', 'r', encoding='utf-8') as f:
+			st.write(f.read())
+	elif yourType[0:-2] == '銀のインディアン':
+		with open(f'2022/{yourType[0:-2]}.txt', 'r', encoding='utf-8') as f:
+			st.write(f.read())
+	elif yourType[0:-2] == '金の鳳凰':
+		with open(f'2022/{yourType[0:-2]}.txt', 'r', encoding='utf-8') as f:
+			st.write(f.read())
+	elif yourType[0:-2] == '銀の鳳凰':
+		with open(f'2022/{yourType[0:-2]}.txt', 'r', encoding='utf-8') as f:
+			st.write(f.read())
+	elif yourType[0:-2] == '金の時計':
+		with open(f'2022/{yourType[0:-2]}.txt', 'r', encoding='utf-8') as f:
+			st.write(f.read())
+	elif yourType[0:-2] == '銀の時計':
+		with open(f'2022/{yourType[0:-2]}.txt', 'r', encoding='utf-8') as f:
+			st.write(f.read())
+	elif yourType[0:-2] == '金のカメレオン':
+		with open(f'2022/{yourType[0:-2]}.txt', 'r', encoding='utf-8') as f:
+			st.write(f.read())
+	elif yourType[0:-2] == '銀のカメレオン':
+		with open(f'2022/{yourType[0:-2]}.txt', 'r', encoding='utf-8') as f:
+			st.write(f.read())
+	elif yourType[0:-2] == '金のイルカ':
+		with open(f'2022/{yourType[0:-2]}.txt', 'r', encoding='utf-8') as f:
+			st.write(f.read())
+	elif yourType[0:-2] == '銀のイルカ':
+		with open(f'2022/{yourType[0:-2]}.txt', 'r', encoding='utf-8') as f:
+			st.write(f.read())
+	else:
+		pass
 
+	return
 
 if st.button('あなたを占う'):
-	uranai_start()
+	results = uranai_start()
+
 
 #相性診断
 st.subheader('相性診断')
@@ -555,89 +600,92 @@ def p_uranai_start():
 	# 壮年期（命数３を採用）
 	if age > 60:
 		if meisu[0:2] < '11':
-			print(f'あなたは{even_odd}の羅針盤型です。')
+			st.subheader(f'あなたは{even_odd}の羅針盤タイプです。')
 			yourType = f'{even_odd}の羅針盤{meisu[0:2]}'
 
 		elif meisu[0:2] < '21':
-			print(f'あなたは{even_odd}のインディアン型です')
+			st.subheader(f'あなたは{even_odd}のインディアンタイプです')
 			yourType = f'{even_odd}のインディアン{meisu[0:2]}'
 
 		elif meisu[0:2] < '31':
-			print(f'あなたは{even_odd}の鳳凰型です')
+			st.subheader(f'あなたは{even_odd}の鳳凰タイプです')
 			yourType = f'{even_odd}の鳳凰{meisu[0:2]}'
 
 		elif meisu[0:2] < '41':
-			print(f'あなたは{even_odd}の時計型です')
+			st.subheader(f'あなたは{even_odd}の時計タイプです')
 			yourType = f'{even_odd}の時計{meisu[0:2]}'
 
 		elif meisu[0:2] < '51':
-			print(f'あなたは{even_odd}のカメレオン型です')
+			st.subheader(f'あなたは{even_odd}のカメレオンタイプです')
 			yourType = f'{even_odd}のカメレオン{meisu[0:2]}'
 
 		elif meisu[0:2] < '61':
-			print(f'あなたは{even_odd}のイルカ型です')
+			st.subheader(f'あなたは{even_odd}のイルカタイプです')
 			yourType = f'{even_odd}のイルカ{meisu[0:2]}'
 		else:
-			print('その他')
+			st.write('その他')
 
 
 	# 青年期（命数２を採用）
 	elif age > 30:
 		if meisu[2:4] < '11':
-			print(f'あなたは{even_odd}の羅針盤型です。')
+			st.subheader(f'あなたは{even_odd}の羅針盤タイプです。')
 			yourType = f'{even_odd}の羅針盤{meisu[2:4]}'
 
 		elif meisu[2:4] < '21':
-			print(f'あなたは{even_odd}のインディアン型です')
+			st.subheader(f'あなたは{even_odd}のインディアンタイプです')
 			yourType = f'{even_odd}のインディアン{meisu[2:4]}'
 
 		elif meisu[2:4] < '31':
-			print(f'あなたは{even_odd}の鳳凰型です')
+			st.subheader(f'あなたは{even_odd}の鳳凰タイプです')
 			yourType = f'{even_odd}の鳳凰{meisu[2:4]}'
 
 		elif meisu[2:4] < '41':
-			print(f'あなたは{even_odd}の時計型です')
+			st.subheader(f'あなたは{even_odd}の時計タイプです')
 			yourType = f'{even_odd}の時計{meisu[2:4]}'
 
 		elif meisu[2:4] < '51':
-			print(f'あなたは{even_odd}のカメレオン型です')
+			st.subheader(f'あなたは{even_odd}のカメレオンタイプです')
 			yourType = f'{even_odd}のカメレオン{meisu[2:4]}'
 
 		elif meisu[2:4] < '61':
-			print(f'あなたは{even_odd}のイルカ型です')
+			st.subheader(f'あなたは{even_odd}のイルカタイプです')
 			yourType = f'{even_odd}のイルカ{meisu[2:4]}'
 		else:
-			print('その他')
+			st.write('その他')
 
 	# 幼年期（命数１を採用）
 	elif age > 0:
 		if meisu[4:6] < '11':
-			print(f'あなたは{even_odd}の羅針盤型です。')
+			st.subheader(f'あなたは{even_odd}の羅針盤タイプです。')
 			yourType = f'{even_odd}の羅針盤{meisu[4:6]}'
 
 		elif meisu[4:6] < '21':
-			print(f'あなたは{even_odd}のインディアン型です')
+			st.subheader(f'あなたは{even_odd}のインディアンタイプです')
 			yourType = f'{even_odd}のインディアン{meisu[4:6]}'
 
 		elif meisu[4:6] < '31':
-			print(f'あなたは{even_odd}の鳳凰型です')
+			st.subheader(f'あなたは{even_odd}の鳳凰タイプです')
 			yourType = f'{even_odd}の鳳凰{meisu[4:6]}'
 
 		elif meisu[4:6] < '41':
-			print(f'あなたは{even_odd}の時計型です')
+			st.subheader(f'あなたは{even_odd}の時計タイプです')
 			yourType = f'{even_odd}の時計{meisu[4:6]}'
 
 		elif meisu[4:6] < '51':
-			print(f'あなたは{even_odd}のカメレオン型です')
+			st.subheader(f'あなたは{even_odd}のカメレオンタイプです')
 			yourType = f'{even_odd}のカメレオン{meisu[4:6]}'
 
 		elif meisu[4:6] < '61':
-			print(f'あなたは{even_odd}のイルカ型です')
+			st.subheader(f'あなたは{even_odd}のイルカタイプです')
 			yourType = f'{even_odd}のイルカ{meisu[4:6]}'
 		else:
-			print('その他')
+			st.write('その他')
 	else:
 		pass
+
+	img = Image.open(f'images/{yourType[0:-2]}.png')
+	st.image(img, use_column_width=True)
 
 	#パートナーのデータ読み込み
 	global p_years
@@ -663,86 +711,86 @@ def p_uranai_start():
 	# 壮年期（命数３を採用）
 	if p_age > 60:
 		if p_meisu[0:2] < '11':
-			print(f'相性を知りたい方は{p_even_odd}の羅針盤型です。')
+			st.subheader(f'相性を知りたい方は{p_even_odd}の羅針盤タイプです。')
 			p_yourType = f'{p_even_odd}の羅針盤{p_meisu[0:2]}'
 
 		elif p_meisu[0:2] < '21':
-			print(f'相性を知りたい方は{p_even_odd}のインディアン型です')
+			st.subheader(f'相性を知りたい方は{p_even_odd}のインディアンタイプです')
 			p_yourType = f'{p_even_odd}のインディアン{p_meisu[0:2]}'
 
 		elif p_meisu[0:2] < '31':
-			print(f'相性を知りたい方は{p_even_odd}の鳳凰型です')
+			st.subheader(f'相性を知りたい方は{p_even_odd}の鳳凰タイプです')
 			p_yourType = f'{p_even_odd}の鳳凰{p_meisu[0:2]}'
 
 		elif p_meisu[0:2] < '41':
-			print(f'相性を知りたい方は{p_even_odd}の時計型です')
+			st.subheader(f'相性を知りたい方は{p_even_odd}の時計タイプです')
 			p_yourType = f'{p_even_odd}の時計{p_meisu[0:2]}'
 
 		elif p_meisu[0:2] < '51':
-			print(f'相性を知りたい方は{p_even_odd}のカメレオン型です')
+			st.subheader(f'相性を知りたい方は{p_even_odd}のカメレオンタイプです')
 			p_yourType = f'{p_even_odd}のカメレオン{p_meisu[0:2]}'
 
 		elif p_meisu[0:2] < '61':
-			print(f'相性を知りたい方は{p_even_odd}のイルカ型です')
+			st.subheader(f'相性を知りたい方は{p_even_odd}のイルカタイプです')
 			p_yourType = f'{p_even_odd}のイルカ{p_meisu[0:2]}'
 		else:
-			print('その他')
+			st.write('その他')
 
 	# 青年期（命数２を採用）
 	elif p_age > 30:
 		if p_meisu[2:4] < '11':
-			print(f'相性を知りたい方は{p_even_odd}の羅針盤型です。')
+			st.subheader(f'相性を知りたい方は{p_even_odd}の羅針盤タイプです。')
 			p_yourType = f'{p_even_odd}の羅針盤{p_meisu[2:4]}'
 
 		elif p_meisu[2:4] < '21':
-			print(f'相性を知りたい方は{p_even_odd}のインディアン型です')
+			st.subheader(f'相性を知りたい方は{p_even_odd}のインディアンタイプです')
 			p_yourType = f'{p_even_odd}のインディアン{p_meisu[2:4]}'
 
 		elif p_meisu[2:4] < '31':
-			print(f'相性を知りたい方は{p_even_odd}の鳳凰型です')
+			st.subheader(f'相性を知りたい方は{p_even_odd}の鳳凰タイプです')
 			p_yourType = f'{p_even_odd}の鳳凰{p_meisu[2:4]}'
 
 		elif p_meisu[2:4] < '41':
-			print(f'相性を知りたい方は{p_even_odd}の時計型です')
+			st.subheader(f'相性を知りたい方は{p_even_odd}の時計タイプです')
 			p_yourType = f'{p_even_odd}の時計{p_meisu[2:4]}'
 
 		elif p_meisu[2:4] < '51':
-			print(f'相性を知りたい方は{p_even_odd}のカメレオン型です')
+			st.subheader(f'相性を知りたい方は{p_even_odd}のカメレオンタイプです')
 			p_yourType = f'{p_even_odd}のカメレオン{p_meisu[2:4]}'
 
 		elif p_meisu[2:4] < '61':
-			print(f'相性を知りたい方は{p_even_odd}のイルカ型です')
+			st.subheader(f'相性を知りたい方は{p_even_odd}のイルカタイプです')
 			p_yourType = f'{p_even_odd}のイルカ{p_meisu[2:4]}'
 		else:
-			print('その他')
+			st.write('その他')
 
 	# 幼年期（命数１を採用）
 	elif p_age > 0:
 		if p_meisu[4:6] < '11':
-			print(f'相性を知りたい方は{p_even_odd}の羅針盤型です。')
+			st.subheader(f'相性を知りたい方は{p_even_odd}の羅針盤タイプです。')
 			p_yourType = f'{p_even_odd}の羅針盤{p_meisu[4:6]}'
 
 		elif p_meisu[4:6] < '21':
-			print(f'相性を知りたい方は{p_even_odd}のインディアン型です')
+			st.subheader(f'相性を知りたい方は{p_even_odd}のインディアンタイプです')
 			p_yourType = f'{p_even_odd}のインディアン{p_meisu[4:6]}'
 
 		elif p_meisu[4:6] < '31':
-			print(f'相性を知りたい方は{p_even_odd}の鳳凰型です')
+			st.subheader('相性を知りたい方は{p_even_odd}の鳳凰タイプです')
 			p_yourType = f'{p_even_odd}の鳳凰{p_meisu[4:6]}'
 
 		elif p_meisu[4:6] < '41':
-			print(f'相性を知りたい方は{p_even_odd}の時計型です')
+			st.subheader(f'相性を知りたい方は{p_even_odd}の時計タイプです')
 			p_yourType = f'{p_even_odd}の時計{p_meisu[4:6]}'
 
 		elif p_meisu[4:6] < '51':
-			print(f'相性を知りたい方は{p_even_odd}のカメレオン型です')
+			st.subheader(f'相性を知りたい方は{p_even_odd}のカメレオンタイプです')
 			p_yourType = f'{p_even_odd}のカメレオン{p_meisu[4:6]}'
 
 		elif p_meisu[4:6] < '61':
-			print(f'相性を知りたい方は{p_even_odd}のイルカ型です')
+			st.subheader(f'相性を知りたい方は{p_even_odd}のイルカタイプです')
 			p_yourType = f'{p_even_odd}のイルカ{p_meisu[4:6]}'
 		else:
-			print('その他')
+			st.write('その他')
 	else:
 		pass
 
@@ -1199,6 +1247,6 @@ def p_uranai_start():
 		pass
 
 if st.button('お相手との相性を占う'):
+	#あなたの運勢は〇〇タイプのみ表示する関数を作る
+	# uranai_start()
 	p_uranai_start()
-
-st.write('Copyright © 2021 Tomoyuki Yoshikawa. All Rights Reserved.')
